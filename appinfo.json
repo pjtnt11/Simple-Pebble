@@ -1,6 +1,6 @@
 {
     "versionLabel": "1.0",
-    "uuid": "521fd0a8-84a5-4f38-bf4f-b4c3c148c1db",
+    "uuid": "13371337-d579-4d75-a5c5-8dfcfe110f62",
     "appKeys": {},
     "longName": "Simple",
     "versionCode": 1,
@@ -10,19 +10,20 @@
     "shortName": "Simple",
     "companyName": "pjtnt11@gmail.com",
     "watchapp": {
-        "watchface": false
+        "watchface": true
     },
     "resources": {
         "media": [
             {
-                "type": "font",
-                "name": "DATE_25",
-                "file": "fonts/Arvo-Regular.ttf"
-            },
-            {
+                "trackingAdjust": -1,
                 "type": "font",
                 "name": "TIME_45",
                 "file": "fonts/Arvo-Bold.ttf"
+            },
+            {
+                "type": "font",
+                "name": "DATE_25",
+                "file": "fonts/Arvo-Regular.ttf"
             }
         ]
     }
