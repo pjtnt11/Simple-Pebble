@@ -63,7 +63,7 @@ void handle_init(void) {
   text_layer_set_text_alignment(text_date_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(text_date_layer));
   
-  text_day_layer = text_layer_create(GRect(0, 36, 144, 168-6));
+  text_day_layer = text_layer_create(GRect(0, 37, 144, 168-6));
   text_layer_set_text_color(text_day_layer, GColorWhite);
   text_layer_set_background_color(text_day_layer, GColorClear);
   text_layer_set_font(text_day_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_DATE_22)));
