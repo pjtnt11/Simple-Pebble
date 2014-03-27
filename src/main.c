@@ -56,28 +56,26 @@ void handle_init(void) {
 
   Layer *window_layer = window_get_root_layer(window);
 
-  text_date_layer = text_layer_create(GRect(12, 100, 144-0, 168-0));
+  text_date_layer = text_layer_create(GRect(0, 100, 144, 168-6));
   text_layer_set_text_color(text_date_layer, GColorWhite);
   text_layer_set_background_color(text_date_layer, GColorClear);
-  text_layer_set_font(text_date_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_DATE_25)));
+  text_layer_set_font(text_date_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_DATE_22)));
+  text_layer_set_text_alignment(text_date_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(text_date_layer));
   
-  text_day_layer = text_layer_create(GRect(17, 32, 144-0, 168-0));
+  text_day_layer = text_layer_create(GRect(0, 36, 144, 168-6));
   text_layer_set_text_color(text_day_layer, GColorWhite);
   text_layer_set_background_color(text_day_layer, GColorClear);
-  text_layer_set_font(text_day_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_DATE_25)));
+  text_layer_set_font(text_day_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_DATE_22)));
+  text_layer_set_text_alignment(text_day_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(text_day_layer));
 
-  text_time_layer = text_layer_create(GRect(19, 55, 144-0, 168-0));
+  text_time_layer = text_layer_create(GRect(0, 55, 144, 168-6));
   text_layer_set_text_color(text_time_layer, GColorWhite);
   text_layer_set_background_color(text_time_layer, GColorClear);
   text_layer_set_font(text_time_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_TIME_45)));
+  text_layer_set_text_alignment(text_time_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(text_time_layer));
-
-  /*GRect line_frame = GRect(8, 97, 139, 2);
-  line_layer = layer_create(line_frame);
-  layer_set_update_proc(line_layer, line_layer_update_callback);
-  layer_add_child(window_layer, line_layer);*/
 
   tick_timer_service_subscribe(MINUTE_UNIT, handle_minute_tick);
   // TODO: Update display here to avoid blank display on launch?
