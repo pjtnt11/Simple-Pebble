@@ -14,24 +14,17 @@ void line_layer_update_callback(Layer *layer, GContext* ctx)
 
 void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) 
 {
-  // Need to be static because they're used by the system later.
-  static char time_text[] = "12:34";
-  static char date2_text[] = "Sun 20";
-  static char date1_text[] = "Apr 2014";
-
+  static char time_text[] = "00:00";
+  static char date2_text[] = "Xxx 00";
+  static char date1_text[] = "Xxx 0000";
   char *time_format;
 
-
-  // TODO: Only update the date when it's changed.
   strftime(date2_text, sizeof(date2_text), "%a %e", tick_time);
   text_layer_set_text(text_date2_layer, date2_text);
   
   strftime(date1_text, sizeof(date1_text), "%b %Y", tick_time);
   text_layer_set_text(text_date1_layer, date1_text);
   
-
-
-
   if (clock_is_24h_style()) {
     time_format = "%R";
   } else {
@@ -76,7 +69,6 @@ void handle_init(void)
   window_set_background_color(window, GColorBlack);
 
   Layer *window_layer = window_get_root_layer(window);
-
   
   text_date2_layer = text_layer_create(GRect(0, 37, 144, 168-6));
   text_layer_set_text_color(text_date2_layer, GColorWhite);
@@ -100,12 +92,9 @@ void handle_init(void)
   layer_add_child(window_layer, text_layer_get_layer(text_date1_layer));
 }
 
-
 int main(void) 
 {
   handle_init();
-
   app_event_loop();
-  
   handle_deinit();
 }
