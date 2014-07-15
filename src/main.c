@@ -14,13 +14,13 @@ void line_layer_update_callback(Layer *layer, GContext* ctx)
 
 void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) 
 {
+  static char time_text[] = "00:00";
   static char date2_text[] = "Xxx 00";
-	static char time_text[] = "00:00";
   static char date1_text[] = "Xxx 0000";
   char *time_format;
 
   strftime(date2_text, sizeof(date2_text), "%a %e", tick_time);
-  text_layer_set_text(text_date2_layer, date2_text); 
+  text_layer_set_text(text_date2_layer, date2_text);
   strftime(date1_text, sizeof(date1_text), "%b %Y", tick_time);
   text_layer_set_text(text_date1_layer, date1_text);
   
@@ -46,6 +46,9 @@ void handle_deinit(void)
 {
   tick_timer_service_unsubscribe();
 }
+
+static void update_hours(struct tm *tick_time){}
+
 
 static void handle_tick(struct tm *tick_time, TimeUnits units_changed) 
 {

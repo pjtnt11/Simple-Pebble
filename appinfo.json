@@ -5,6 +5,7 @@
     ],
     "companyName": "pjtnt11",
     "longName": "Simple",
+    "projectType": "native",
     "resources": {
         "media": [
             {
@@ -23,7 +24,7 @@
     "shortName": "Simple",
     "uuid": "13371337-d579-4d75-a5c5-8dfcfe110f62",
     "versionCode": 1,
-    "versionLabel": "2.5",
+    "versionLabel": "2.6",
     "watchapp": {
         "watchface": true
     }
