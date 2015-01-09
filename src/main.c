@@ -48,8 +48,6 @@ void handle_deinit(void)
 }
 
 static void update_hours(struct tm *tick_time){}
-
-
 static void handle_tick(struct tm *tick_time, TimeUnits units_changed) 
 {
   if (HOUR_UNIT) 
