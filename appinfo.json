@@ -4,17 +4,19 @@
         ""
     ],
     "companyName": "pjtnt11",
-    "longName": "Simple",
+    "longName": "Simple - Original",
     "projectType": "native",
     "resources": {
         "media": [
             {
+                "compatibility": "2.7",
                 "file": "fonts/Arvo-Bold.ttf",
                 "name": "TIME_45",
                 "trackingAdjust": -1,
                 "type": "font"
             },
             {
+                "compatibility": "2.7",
                 "file": "fonts/Arvo-Regular.ttf",
                 "name": "DATE_22",
                 "type": "font"
@@ -24,7 +26,7 @@
     "shortName": "Simple",
     "uuid": "13371337-d579-4d75-a5c5-8dfcfe110f62",
     "versionCode": 1,
-    "versionLabel": "2.6",
+    "versionLabel": "1.0",
     "watchapp": {
         "watchface": true
     }
