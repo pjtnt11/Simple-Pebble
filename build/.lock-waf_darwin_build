@@ -1,0 +1,8 @@
+argv = ['/Users/PJ/pebble-dev/PebbleSDK-2.8.1/Pebble/waf', 'configure', 'build']
+environ = {'TERM_SESSION_ID': 'EDF3954E-010D-4B34-B57C-9F101236AA97', 'XPC_SERVICE_NAME': '0', 'PYTHONPATH': '/Users/PJ/pebble-dev/PebbleSDK-current/bin/../.env/lib/python2.7/site-packages', 'VERSIONER_PYTHON_PREFER_32_BIT': 'no', 'TERM_PROGRAM_VERSION': '343', 'SSH_AUTH_SOCK': '/private/tmp/com.apple.launchd.srDL1VQK7M/Listeners', 'SHELL': '/bin/bash', 'LOGNAME': 'PJ', 'USER': 'PJ', 'HOME': '/Users/PJ', 'PATH': '/Users/PJ/pebble-dev/PebbleSDK-current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/PJ/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin', 'TMPDIR': '/var/folders/2j/5y7j0mqs6lb52291qq2q_h3m0000gn/T/', 'TERM_PROGRAM': 'Apple_Terminal', 'LANG': 'en_US.UTF-8', 'TERM': 'xterm-256color', 'Apple_PubSub_Socket_Render': '/private/tmp/com.apple.launchd.x19heH6748/Render', 'VERSIONER_PYTHON_VERSION': '2.7', 'SHLVL': '1', 'OLDPWD': '/Users/PJ', 'XPC_FLAGS': '0x0', '__CF_USER_TEXT_ENCODING': '0x1F5:0x0:0x0', 'PWD': '/users/pj/documents/github/simple-for-pebble', '_': '/Users/PJ/pebble-dev/PebbleSDK-current/bin/pebble'}
+files = ['/Users/PJ/Documents/GitHub/simple-for-pebble/wscript']
+hash = -1832836930476241949
+options = {'files': '', 'jobs': 2, 'verbose': 0, 'nocache': False, 'progress_bar': 0, 'timestamp': None, 'distcheck_args': None, 'top': '', 'destdir': '', 'keep': 0, 'zones': '', 'debug': False, 'prefix': '/usr/local/', 'download': False, 'force': False, 'targets': '', 'out': ''}
+out_dir = '/Users/PJ/Documents/GitHub/simple-for-pebble/build'
+run_dir = '/Users/PJ/Documents/GitHub/simple-for-pebble'
+top_dir = '/Users/PJ/Documents/GitHub/simple-for-pebble'

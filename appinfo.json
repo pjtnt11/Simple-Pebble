@@ -26,7 +26,7 @@
     "shortName": "Simple",
     "uuid": "13371337-d579-4d75-a5c5-8dfcfe110f62",
     "versionCode": 1,
-    "versionLabel": "1.1.7",
+    "versionLabel": "1.7",
     "watchapp": {
         "watchface": true
     }
