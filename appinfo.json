@@ -9,14 +9,14 @@
     "resources": {
         "media": [
             {
-                "compatibility": "2.7",
+                "compatibility": "1.7",
                 "file": "fonts/Arvo-Bold.ttf",
                 "name": "TIME_45",
                 "trackingAdjust": -1,
                 "type": "font"
             },
             {
-                "compatibility": "2.7",
+                "compatibility": "1.7",
                 "file": "fonts/Arvo-Regular.ttf",
                 "name": "DATE_22",
                 "type": "font"
