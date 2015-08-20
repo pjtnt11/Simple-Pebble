@@ -9,24 +9,25 @@
     "resources": {
         "media": [
             {
-                "compatibility": "1.7",
-                "file": "fonts/Arvo-Bold.ttf",
-                "name": "TIME_45",
-                "trackingAdjust": -1,
+                "file": "fonts/System San Francisco Display Thin.ttf",
+                "name": "SAN_FRANCISCO_THIN_18",
                 "type": "font"
             },
             {
-                "compatibility": "1.7",
-                "file": "fonts/Arvo-Regular.ttf",
-                "name": "DATE_22",
+                "file": "fonts/System San Francisco Display Bold.ttf",
+                "name": "SAN_FRANCISCO_40",
                 "type": "font"
             }
         ]
     },
+    "sdkVersion": "3",
     "shortName": "Simple",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
     "uuid": "13371337-d579-4d75-a5c5-8dfcfe110f62",
-    "versionCode": 1,
-    "versionLabel": "1.8",
+    "versionLabel": "2.0",
     "watchapp": {
         "watchface": true
     }
