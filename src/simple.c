@@ -8,7 +8,7 @@ static TextLayer *s_date1_layer, *s_date2_layer, *s_time_layer;
 // TO ADD HOURLY VIBES
 //
 *///////////////////////////////////////////
-bool hourlyVibeIsEnabled = true;
+bool hourlyVibeIsEnabled = false;
 
 static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) 
 {	
@@ -24,6 +24,7 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed)
 	{
 		if (hourlyVibeIsEnabled)
 		{
+			if (tick_time->tm_hour >= 6 && tick_time->tm_hour <= 22)
 			vibes_double_pulse();
 		}
 	}
