@@ -5,6 +5,7 @@ static TextLayer *s_date1_layer, *s_date2_layer, *s_time_layer;
 
 static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) 
 {	
+	bool hourlyVibeIsEnabled = false;
   // Need to be static because they're used by the system later.
   static char s_date1_text[] = "Xxx 00";
 	static char s_time_text[] = "00:00";
@@ -15,7 +16,10 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed)
 	
 	if (tick_time->tm_min == 0)
 	{
-		vibes_double_pulse();
+		if (hourlyVibeIsEnabled)
+		{
+			vibes_double_pulse();
+		}
 	}
 	
   text_layer_set_text(s_date1_layer, s_date1_text);
