@@ -2,10 +2,16 @@
 
 static Window *s_main_window;
 static TextLayer *s_date1_layer, *s_date2_layer, *s_time_layer;
+/*//////////////////////////////////////////
+//
+// CHANGE "hourlyVibeIsEnabled" TO TRUE
+// TO ADD HOURLY VIBES
+//
+*///////////////////////////////////////////
+bool hourlyVibeIsEnabled = true;
 
 static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) 
 {	
-	bool hourlyVibeIsEnabled = false;
   // Need to be static because they're used by the system later.
   static char s_date1_text[] = "Xxx 00";
 	static char s_time_text[] = "00:00";

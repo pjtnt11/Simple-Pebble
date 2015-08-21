@@ -9,13 +9,13 @@
     "resources": {
         "media": [
             {
-                "file": "fonts/System San Francisco Display Thin.ttf",
-                "name": "SAN_FRANCISCO_THIN_18",
+                "file": "fonts/System San Francisco Display Bold.ttf",
+                "name": "SAN_FRANCISCO_40",
                 "type": "font"
             },
             {
-                "file": "fonts/System San Francisco Display Bold.ttf",
-                "name": "SAN_FRANCISCO_40",
+                "file": "fonts/System San Francisco Display Thin.ttf",
+                "name": "SAN_FRANCISCO_THIN_18",
                 "type": "font"
             }
         ]
