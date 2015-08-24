@@ -2,22 +2,31 @@
 
 static Window *s_main_window;
 static TextLayer *s_date1_layer, *s_date2_layer, *s_time_layer;
-/*//////////////////////////////////////////
+
+/*///////////////////////////////////////////////////////////
 //
-// CHANGE "hourlyVibeIsEnabled" TO TRUE
-// TO ADD HOURLY VIBES
+// CHANGE "hourlyVibeIsEnabled" TO TRUE TO ADD HOURLY VIBES
+// CHANGE "useOldFont" TO TRUE TO USE THE OLD MORE BOLD FONT
 //
-*///////////////////////////////////////////
+*////////////////////////////////////////////////////////////
 bool hourlyVibeIsEnabled = false;
+bool useOldFont = true;
 
 static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) 
 {	
   // Need to be static because they're used by the system later.
-  static char s_date1_text[] = "Xxx 00";
+  static char s_date1_text[] = "Xxxxxxx 00";
 	static char s_time_text[] = "00:00";
 	static char s_date2_text[] = "Xxx 0000";
-
-  strftime(s_date1_text, sizeof(s_date1_text), "%a %e", tick_time);
+	// Check to see if the font is small enought to handle a full weekday
+	if (useOldFont)
+	{
+		strftime(s_date1_text, sizeof(s_date1_text), "%a %e", tick_time);
+	}
+	else
+	{
+		strftime(s_date1_text, sizeof(s_date1_text), "%A %e", tick_time);
+	}
 	strftime(s_date2_text, sizeof(s_date2_text), "%b %Y", tick_time);
 	
 	if (tick_time->tm_min == 0)
@@ -54,27 +63,54 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed)
 static void main_window_load(Window *window) 
 {
   Layer *window_layer = window_get_root_layer(window);
-
-  s_date1_layer = text_layer_create(GRect(0, 43, 144, 23));
+	
+	//Check to see if the user wants the old font
+	if (useOldFont)
+	{
+	s_date1_layer = text_layer_create(GRect(0, 37, 144, 30));
   text_layer_set_text_color(s_date1_layer, GColorWhite);
   text_layer_set_background_color(s_date1_layer, GColorClear);
-  text_layer_set_font(s_date1_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_SAN_FRANCISCO_THIN_18)));
+	text_layer_set_font(s_date1_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_ARVO_22)));
 	text_layer_set_text_alignment(s_date1_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_date1_layer));
-
-  s_time_layer = text_layer_create(GRect(0, 55, 144, 50));
+		
+	s_time_layer = text_layer_create(GRect(0, 55, 144, 60));
   text_layer_set_text_color(s_time_layer, GColorWhite);
   text_layer_set_background_color(s_time_layer, GColorClear);
-  text_layer_set_font(s_time_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_SAN_FRANCISCO_40)));
+	text_layer_set_font(s_time_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_ARVO_BOLD_45)));
+	text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
+  layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
+	
+	s_date2_layer = text_layer_create(GRect(0, 100, 144, 30));
+  text_layer_set_text_color(s_date2_layer, GColorWhite);
+  text_layer_set_background_color(s_date2_layer, GColorClear);
+	text_layer_set_font(s_date2_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_ARVO_22)));
+	text_layer_set_text_alignment(s_date2_layer, GTextAlignmentCenter);
+  layer_add_child(window_layer, text_layer_get_layer(s_date2_layer));
+	}
+	else
+	{
+	s_date1_layer = text_layer_create(GRect(0, 43, 144, 23));
+  text_layer_set_text_color(s_date1_layer, GColorWhite);
+  text_layer_set_background_color(s_date1_layer, GColorClear);
+	text_layer_set_font(s_date1_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_SAN_FRANCISCO_THIN_18)));
+	text_layer_set_text_alignment(s_date1_layer, GTextAlignmentCenter);
+  layer_add_child(window_layer, text_layer_get_layer(s_date1_layer));
+		
+	s_time_layer = text_layer_create(GRect(0, 55, 144, 50));
+  text_layer_set_text_color(s_time_layer, GColorWhite);
+  text_layer_set_background_color(s_time_layer, GColorClear);
+	text_layer_set_font(s_time_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_SAN_FRANCISCO_40)));
 	text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
 	
 	s_date2_layer = text_layer_create(GRect(0, 95, 144, 25));
   text_layer_set_text_color(s_date2_layer, GColorWhite);
   text_layer_set_background_color(s_date2_layer, GColorClear);
-  text_layer_set_font(s_date2_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_SAN_FRANCISCO_THIN_18)));
+	text_layer_set_font(s_date2_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_SAN_FRANCISCO_THIN_18)));
 	text_layer_set_text_alignment(s_date2_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(s_date2_layer));
+	}
 }
 
 static void main_window_unload(Window *window) 

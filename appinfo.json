@@ -9,6 +9,17 @@
     "resources": {
         "media": [
             {
+                "file": "fonts/Arvo-Bold.ttf",
+                "name": "ARVO_BOLD_45",
+                "trackingAdjust": -1,
+                "type": "font"
+            },
+            {
+                "file": "fonts/Arvo-Regular.ttf",
+                "name": "ARVO_22",
+                "type": "font"
+            },
+            {
                 "file": "fonts/System San Francisco Display Bold.ttf",
                 "name": "SAN_FRANCISCO_40",
                 "type": "font"
